@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO; //Подключаем файловые потоки 
-using System.Diagnostics;//Для запуска блакнота 
+using System.Diagnostics; //Для запуска блакнота 
 
 namespace Files
 {

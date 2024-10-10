@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Academy
 {
@@ -25,6 +26,7 @@ namespace Academy
 			teacher.Print();
 			Console.WriteLine(teacher); 
 #endif
+
 			Human[] group = new Human[]
 			{
 				new Student ("Pinkman", "Jessie", 22, "Chemistry", "ww_220", 95, 96),
@@ -40,6 +42,7 @@ namespace Academy
 				gr.WriteLine(group[i].ToString());
 			}
 				gr.Close();
+			Process.Start("notepad", "File.txt");
 		}
 	}
 }
