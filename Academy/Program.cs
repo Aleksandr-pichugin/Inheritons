@@ -29,8 +29,10 @@ namespace Academy
 
 			Human[] group = new Human[]
 			{
+				new Graduate("Montana", "Adriana", 43, "Chemistry","ww_220",93, 96, "Programming", 98),
 				new Student ("Pinkman", "Jessie", 22, "Chemistry", "ww_220", 95, 96),
-				new Teacher("White", "Walter", 50, "Chemistry", 25)
+				new Teacher("White", "Walter", 50, "Chemistry", 25),
+
 			};
 			for (int i = 0; i < group.Length; i++)
 			{
