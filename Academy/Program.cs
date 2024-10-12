@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Net.Http.Headers;
+
 
 namespace Academy
 {
@@ -29,22 +31,39 @@ namespace Academy
 
 			Human[] group = new Human[]
 			{
-				new Graduate("Montana", "Adriana", 43, "Chemistry","ww_220",93, 96, "Programming", 98),
+				new Graduate("Montana", "Adriana", 43, "Criminalistic","DEA",93, 96, "How to catch"),
 				new Student ("Pinkman", "Jessie", 22, "Chemistry", "ww_220", 95, 96),
 				new Teacher("White", "Walter", 50, "Chemistry", 25),
-
+			
 			};
-			for (int i = 0; i < group.Length; i++)
-			{
-			 Console.WriteLine(group[i].ToString());
-			}
-			StreamWriter gr = new StreamWriter("File.txt");
+			Print (group);
+			Save(group, "group.txt");
+			/*StreamWriter gr = new StreamWriter("File.txt");
 			for (int i = 0; i < group.Length; i++)
 			{
 				gr.WriteLine(group[i].ToString());
 			}
 				gr.Close();
-			Process.Start("notepad", "File.txt");
+			Process.Start("notepad", "File.txt");*/
+		}
+		static void Print(Human[] group)
+		{
+			for (int i = 0; i < group.Length; i++)
+			{
+			 Console.WriteLine(group[i]);
+			}
+			Console.WriteLine();
+
+		}
+		static void Save(Human[] group, string filename)
+		{
+			StreamWriter sw= new StreamWriter(filename);
+			for (int i = 0; i < group.Length; i++)
+			{
+			sw.WriteLine(group[i]);
+			}
+			sw.Close();
+			Process.Start("notepad", filename);
 		}
 	}
 }
