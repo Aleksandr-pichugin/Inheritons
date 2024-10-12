@@ -37,7 +37,7 @@ namespace Academy
 			
 			};
 			Streamer.Print (group);
-			Streamer.Save(group, "group.txt");
+			Streamer.Save(group, "group.csv");
 			/*StreamWriter gr = new StreamWriter("File.txt");
 			for (int i = 0; i < group.Length; i++)
 			{
