@@ -17,7 +17,7 @@ namespace Academy
 			string subject
 			) : base(lastName, firstName, Age, speciality, group, rating, attendance)
 		{
-			Subject = Subject;
+			Subject = subject;
 			Console.WriteLine($"SConstructor:{GetHashCode()}");
 		}
 		~Graduate()
@@ -35,7 +35,13 @@ namespace Academy
 		}
 		public override string ToFileString()
 		{
-			return base.ToFileString()+$";{Subject}";
+			return base.ToFileString()+$",{Subject}";
+		}
+		public override Human Init(string[] values)
+		{
+			base.Init(values);
+			Subject = values[8];
+			return this;
 		}
 	}
 }

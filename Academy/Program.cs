@@ -1,4 +1,6 @@
 ﻿//#define INHERITANCE_CHECK
+//#define SAVE_CHECK
+#define LOAD_CHECK
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,14 +31,15 @@ namespace Academy
 			Console.WriteLine(teacher); 
 #endif
 
+#if SAVE_CHECK
 			Human[] group = new Human[]
-			{
+				{
 				new Graduate("Montana", "Adriana", 43, "Criminalistic","DEA",93, 96, "How to catch"),
 				new Student ("Pinkman", "Jessie", 22, "Chemistry", "ww_220", 95, 96),
 				new Teacher("White", "Walter", 50, "Chemistry", 25),
-			
-			};
-			Streamer.Print (group);
+
+				};
+			Streamer.Print(group);
 			Streamer.Save(group, "group.csv");
 			/*StreamWriter gr = new StreamWriter("File.txt");
 			for (int i = 0; i < group.Length; i++)
@@ -44,8 +47,14 @@ namespace Academy
 				gr.WriteLine(group[i].ToString());
 			}
 				gr.Close();
-			Process.Start("notepad", "File.txt");*/
+			Process.Start("notepad", "File.txt");*/ 
+#endif
+#if LOAD_CHECK
+			Human[] group = Streamer.Load("group.csv");
+			Streamer.Print(group);
+
+#endif
 		}
-		
+
 	}
 }
