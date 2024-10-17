@@ -1,6 +1,6 @@
 ﻿//#define INHERITANCE_CHECK
 //#define SAVE_CHECK
-#define LOAD_CHECK
+n 
 using System;
 using System.Collections.Generic;
 using System.IO;
